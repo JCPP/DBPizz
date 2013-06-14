@@ -6,5 +6,8 @@
 		"j4mie/paris" : "1.*",
 		"slim/extras" : "2.0.3",
 		"j4mie/idiorm" : "1.*"
-	}
+	},
+	"autoload": {
+        "classmap": ["app/lib/"]
+    }
 }
