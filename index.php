@@ -1,4 +1,8 @@
 <?php
+/**
+ * /Si registra l'autoloader di Twig,
+ * questo metodo è usato quando si installa Twig tramite Composer
+ */
 require 'vendor/autoload.php';
 
 // Setta il view Twig personalizzato
