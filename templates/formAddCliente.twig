@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Cliente{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("PizzerieAddPost") }}"> //bisogna cambiare app.urlFor?
+	<label for="Nome">Nome</label>
+	<input type="text" name="nome" id="Nome_Cl"/></br>
+	
+	<label for="Nome">Cognome</label>
+	<input type="text" name="nome" id="Cognome_Cl"/></br>
+
+	<input type="submit" value="Aggiungi Cliente">
+	
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Prodotto{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("PizzerieAddPost") }}"> //bisogna cambiare app.urlFor?
+	<label for="Nome">Nome</label>
+	<input type="text" name="nome" id="Nome_Pr"/></br>
+	
+	<label for="Prezzo">Prezzo</label>
+	<input type="text" name="prezzo" id=""/></br> //aggiungere prezzo a database,aggiungere id al form
+	
+	//aggiungere label per inserimento ingredienti di cui è composto il prodotto
+
+	<input type="submit" value="Aggiungi Prodotto">
+	
+</form>
+{% endblock %}
