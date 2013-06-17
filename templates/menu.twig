@@ -1,0 +1,13 @@
+{# Creo l'array che contiene i link per il menu orizzontale. #}
+{%
+	set links = {
+		'Home Page': app.urlFor('HomePage'),
+		'Pizzerie': app.urlFor('Pizzerie')
+	} 
+%}
+
+<ul id="menu">
+	{% for key, link in links %}
+	    <li><a href="{{ link }}">{{key}}</a></li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,33 @@
+ul#menu {
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+ul#menu li {
+    background-color: #CCCCCC;
+    border-bottom: 5px solid #000000;
+    display: block;
+    width: 150px;
+    height: 30px;
+    margin: 2px;
+    float: left; /* elementi su singola riga */
+}
+  
+ul#menu li a {
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+  
+ul#menu li.active, ul#menu li:hover {
+    background-color: #000000;
+    border-bottom: 5px solid #FF831C;
+}

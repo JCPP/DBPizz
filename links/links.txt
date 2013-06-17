@@ -1,0 +1,2 @@
+Creare richieste in PHP:
+http://www.lornajane.net/posts/2010/three-ways-to-make-a-post-request-from-php#comment-1570

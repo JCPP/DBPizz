@@ -1,0 +1,39 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Pizzerie{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("PizzerieAdd") }}">Aggiungi una pizzeria</a></br>
+	{% if pizzerie %}
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Numero telefonico</th>
+					<th>CAP</th>
+					<th>Paese</th>
+					<th>Via</th>
+					<th>Civico</th>
+					<th>Asporto</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for pizzeria in pizzerie %}
+					<tr>
+						<td>{{ pizzeria.IDPizzeria }}</td>
+						<td>{{ pizzeria.Nome_Pizz }}</td>
+						<td>{{ pizzeria.Numero_Tel }}</td>
+						<td>{{ pizzeria.CAP }}</td>
+						<td>{{ pizzeria.Paese }}</td>
+						<td>{{ pizzeria.Via }}</td>
+						<td>{{ pizzeria.Civico }}</td>
+						<td>{{ pizzeria.Asporto }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessuna pizzeria trovata.
+	{% endif %}
+{% endblock %}

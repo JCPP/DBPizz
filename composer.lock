@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "93919449c9697171371f130edd92eba7",
+    "hash": "5d6f41352b0562385f3fa490797c5795",
     "packages": [
         {
             "name": "j4mie/idiorm",

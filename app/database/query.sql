@@ -1,7 +1,7 @@
 /**
  * Creazione tabella Cliente
  */
-CREATE TABLE Cliente IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Cliente(
 	IDCliente INTEGER(11) PRIMARY KEY,
 	Nome_Cl VARCHAR(50) NOT NULL,
 	Cognome_Cl VARCHAR(30) NOT NULL
@@ -10,7 +10,7 @@ CREATE TABLE Cliente IF NOT EXISTS(
 /**
  * Creazione tabella Prodotto.
  */
-CREATE TABLE Prodotto IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Prodotto(
 	IDProdotto INTEGER(11) PRIMARY KEY,
 	Nome_Pr VARCHAR(30) NOT NULL
 );
@@ -18,7 +18,7 @@ CREATE TABLE Prodotto IF NOT EXISTS(
 /**
  * Creazione tabella Ordine (associazione tra Cliente e Prodotto).
  */
-CREATE TABLE Ordine IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Ordine(
 	IDCliente INTEGER(11),
 	IDProdotto INTEGER(11),
 	PRIMARY KEY(IDCliente, IDProdotto)
@@ -28,7 +28,7 @@ CREATE TABLE Ordine IF NOT EXISTS(
 /**
  * Creazione tabella Ingrediente.
  */
-CREATE TABLE Ingrediente IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Ingrediente(
 	IDIngrediente INTEGER(11) PRIMARY KEY,
 	Nome_Ing VARCHAR(30) NOT NULL
 );
@@ -36,7 +36,7 @@ CREATE TABLE Ingrediente IF NOT EXISTS(
 /**
  * Creazione tabella CompostoDa (associazione tra Prodotto e Ingrediente).
  */
-CREATE TABLE CompostoDa IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS CompostoDa(
 	IDProdotto INTEGER(11),
 	IDIngrendiente INTEGER(11),
 	PRIMARY KEY(IDProdotto, IDIngrendiente)
@@ -45,7 +45,7 @@ CREATE TABLE CompostoDa IF NOT EXISTS(
 /**
  * Creazione tabella Pizzeria.
  */
-CREATE TABLE Pizzeria IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Pizzeria(
 	IDPizzeria INTEGER(11) PRIMARY KEY,
 	Nome_Pizz VARCHAR(40) NOT NULL,
 	Numero_Tel VARCHAR(30) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE Pizzeria IF NOT EXISTS(
 /**
  * Creazione tabella Appartiene (associazione tra Prodotto e Pizzeria).
  */
-CREATE TABLE Appartiene IF NOT EXISTS(
+CREATE TABLE IF NOT EXISTS Appartiene(
 	IDProdotto INTEGER(11),
 	IDPizzeria INTEGER(11),
 	PRIMARY KEY(IDProdotto, IDPizzeria)

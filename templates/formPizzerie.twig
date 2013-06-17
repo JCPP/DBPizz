@@ -1,0 +1,35 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Pizzeria{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("PizzerieAddPost") }}">
+	<label for="Nome">Nome</label>
+	<input type="text" name="nome" id="nome"/></br>
+	
+	<label for="tel">Numero telefono</label>
+	<input type="text" name="tel" id="tel"/></br>
+	
+	<label for="cap">CAP</label>
+	<input type="text" name="cap" id="cap"/></br>
+	
+	<label for="paese">Paese</label>
+	<input type="text" name="paese" id="paese"/></br>
+	
+	<label for="via">Via</label>
+	<input type="text" name="via" id="via"/></br>
+	
+	<label for="civico">Numero civico</label>
+	<input type="text" name="civico" id="civico"/></br>
+	
+	<label for="asporto">Asporto</label>
+	<select name="asporto" id="asporto">
+		<option value="null"></option>
+		<option value="true">Sì</option>
+		<option value="false">No</option>
+	</select></br>
+	
+	<input type="submit" value="Aggiungi pizzeria">
+	
+</form>
+{% endblock %}

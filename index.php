@@ -24,25 +24,6 @@ $db = ORM::get_db();
 
 require 'app/createDatabase.php';
 
-
-require 'api/api.php';
-
-//Home page
-$app->get('/', function () use($app){
-	$app->render('base.html', array(
-		'app' => $app
-	));
-})->name("HomePage");
-
-
-//Pizzerie
-$app->get('/pizzerie/', function () use($app){
-	$pizzerie = getPizzerie();
-	$app->render('base.html', array(
-			'app' => $app
-	));
-})->name("Pizzerie");
-
-
+require 'app/routes.php';
 
 $app->run();
