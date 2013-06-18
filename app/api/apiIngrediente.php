@@ -3,7 +3,7 @@
 $app->post('/api/ingredienti/add', function () use($app){
 	$json = $app->request()->getBody();
 	$ingrediente = json_decode($json);
-
+	
 	//Controlli
 	foreach($ingrediente as $key=>$value){
 		if(empty($value)){
@@ -11,7 +11,7 @@ $app->post('/api/ingredienti/add', function () use($app){
 		}
 	}
 
-	//Aggiungo l'ordine al database
+	//Aggiungo l'ingrediente al database
 	$ingredienteDB = Model::factory('Ingrediente')->create();
 	$ingredienteDB->Nome_Ing = $ingrediente->nome;
 	$ingredienteDB->save();

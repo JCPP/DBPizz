@@ -6,5 +6,5 @@
 *
 */
 class Ingrediente extends Model{
-
+	public static $_id_column = 'IDIngrediente';
 }

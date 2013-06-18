@@ -11,6 +11,7 @@
 					<th>ID</th>
 					<th>Nome</th>
 					<th>Prezzo</th>
+					<th>Ingredienti</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,6 +20,20 @@
 						<td>{{ prodotto.IDProdotto }}</td>
 						<td>{{ prodotto.Nome_Pr }}</td>
 						<td>{{ prodotto.Prezzo_Pr }}</td>
+						{% set ingredienti = prodotto.ingredienti().find_many() %}
+						<td>
+						{% if ingredienti %}
+							{% for ingrediente in ingredienti %}
+								{{ ingrediente.Nome_Ing }}
+								{% if loop.last == false %}
+								,
+								{% endif %}
+							{% endfor %}
+							
+						{% else %}
+							 
+						{% endif %}
+						</td>
 					</tr>
 				{% endfor %}
 			</tbody>

@@ -9,6 +9,13 @@
 	
 	<label for="Prezzo_Pr">Prezzo</label>
 	<input type="text" name="prezzo" id="Prezzo_Pr"/></br>
+	
+	<label for="Ingredienti">Ingredienti</label>
+	<select multiple="multiple" id="Ingredienti" name="ingredienti[]">
+		{% for ingrediente in ingredienti  %}
+			<option value="{{ ingrediente.IDIngrediente }}"> {{ ingrediente.Nome_Ing }}</option>
+		{% endfor %}
+	</select><br/>
 
 	<input type="submit" value="Aggiungi Prodotto">
 	

@@ -1,7 +1,7 @@
 <?php
 /**
  * Si registra l'autoloader per i componenti installati.
- * @todo in formProdotti.twig: aggiungere label per inserimento ingredienti di cui è composto il prodotto (multi select).
+ *
  */
 require 'vendor/autoload.php';
 
