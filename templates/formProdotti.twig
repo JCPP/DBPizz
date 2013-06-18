@@ -3,14 +3,12 @@
 {% block subtitle %}- Aggiungi Prodotto{% endblock %}
 
 {% block content %}
-<form method="post" action="{{ app.urlFor("PizzerieAddPost") }}"> //bisogna cambiare app.urlFor?
+<form method="post" action="{{ app.urlFor("ProdottiAddPost") }}">
 	<label for="Nome_Pr">Nome</label>
 	<input type="text" name="nome" id="Nome_Pr"/></br>
 	
 	<label for="Prezzo_Pr">Prezzo</label>
 	<input type="text" name="prezzo" id="Prezzo_Pr"/></br>
-	
-	//aggiungere label per inserimento ingredienti di cui è composto il prodotto
 
 	<input type="submit" value="Aggiungi Prodotto">
 	
