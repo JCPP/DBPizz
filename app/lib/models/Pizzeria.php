@@ -6,5 +6,5 @@
  *
  */
 class Pizzeria extends Model{
-
+	public static $_id_column = 'IDPizzeria';
 }

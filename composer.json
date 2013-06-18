@@ -5,7 +5,8 @@
 		"slim/slim" : "2.*",
 		"j4mie/paris" : "1.*",
 		"slim/extras" : "2.0.3",
-		"j4mie/idiorm" : "1.*"
+		"j4mie/idiorm" : "1.*",
+		"nategood/httpful": "*"
 	},
 	"autoload": {
         "classmap": ["app/lib/"]

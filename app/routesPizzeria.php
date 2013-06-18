@@ -1,7 +1,6 @@
 <?php
 //Pizzerie
 $app->get('/pizzerie/', function () use($app){
-
 	$app->render('pizzerie.twig', array(
 			'app' => $app,
 			'pizzerie' => Model::factory('Pizzeria')->find_many()
@@ -19,18 +18,26 @@ $app->get('/pizzerie/add/', function () use($app){
 
 //Aggiungi una pizzeria (POST)
 $app->post('/pizzerie/add/', function () use($app){
-	$postVars = $app->request()->post();
+	$request = $app->request();
+	$postVars = $request->post();
+	$url = $request->getUrl() . $app->urlFor("APIPizzerieAdd");
 	
-	$context = stream_context_create(array(
-			'http' => array(
-					'method' => 'POST',
-					'header' => 'Content-Type: application/xml',
-					'content' => $postVars
-			)
-	));
+	$response = \Httpful\Request::post($url)    // Build a POST request...
+	->sendsJson()                               // tell it we're sending (Content-Type) JSON...
+	->body(json_encode($postVars))             	// attach a body/payload...
+	->send();                                   // and finally, fire that thing off!
 	
-	$result = file_get_contents($app->urlFor("APIPizzerieAdd"), false, $context);
+	$body = $response->body;
 	
+	$risposta = json_decode($body);
 	
-	
+	if(property_exists($risposta, "errore")){
+		$app->render('errore.twig', array(
+				'app' => $app,
+				'errore' => $risposta->errore
+		));
+	}
+	else if(property_exists($risposta, "successo")){
+		$app->redirect($app->urlFor("Pizzerie"));
+	}
 })->name("PizzerieAddPost");
