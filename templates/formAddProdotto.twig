@@ -4,11 +4,11 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("PizzerieAddPost") }}"> //bisogna cambiare app.urlFor?
-	<label for="Nome">Nome</label>
+	<label for="Nome_Pr">Nome</label>
 	<input type="text" name="nome" id="Nome_Pr"/></br>
 	
-	<label for="Prezzo">Prezzo</label>
-	<input type="text" name="prezzo" id=""/></br> //aggiungere prezzo a database,aggiungere id al form
+	<label for="Prezzo_Pr">Prezzo</label>
+	<input type="text" name="prezzo" id="Prezzo_Pr"/></br>
 	
 	//aggiungere label per inserimento ingredienti di cui è composto il prodotto
 
