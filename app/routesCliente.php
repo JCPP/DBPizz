@@ -1,7 +1,4 @@
 <?php
-/**
- * @todo mostrare tutti gli ordini effettuati da un cliente.
- */
 //Clienti
 $app->get('/clienti/', function () use($app){
 	$app->render('clienti.twig', array(
@@ -44,3 +41,22 @@ $app->post('/clienti/add/', function () use($app){
 		$app->redirect($app->urlFor("Clienti"));
 	}
 })->name("ClientiAddPost");
+
+//Cliente
+$app->get('/clienti/:id', function ($id) use($app){
+	$cliente = Model::factory('Cliente')->find_one($id);
+	if (! $cliente instanceof Cliente) {
+		$app->render('errore.twig', array(
+				'app' => $app,
+				'errore' => 'Cliente con id ' . $id . 'non esistente.'
+		));
+	}
+	
+	$ordini = $cliente->ordini()->find_many();
+	
+	$app->render('cliente.twig', array(
+			'app' => $app,
+			'cliente' => $cliente,
+			'ordini' => $ordini
+	));
+})->name("Cliente");

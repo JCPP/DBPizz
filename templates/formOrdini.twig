@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Ordine{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("OrdiniAddPost") }}">
+	<label for="IDCliente">IDCliente</label>
+	<input type="text" name="idCliente" id="IDCliente"/></br>
+	
+	<label for="IDProdotto">IDProdotto</label>
+	<input type="text" name="idProdotto" id="IDProdotto"/></br>
+
+	<input type="submit" value="Aggiungi Ordine">
+	
+</form>
+{% endblock %}

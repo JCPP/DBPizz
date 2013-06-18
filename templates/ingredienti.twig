@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Ingredienti{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("IngredientiAdd") }}">Aggiungi un ingrediente</a></br>
+	{% if ingredienti %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ingrediente in ingredienti %}
+					<tr>
+						<td>{{ ingrediente.IDIngrediente }}</td>
+						<td>{{ ingrediente.Nome_Ing }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun ingrediente presente.
+	{% endif %}
+{% endblock %}

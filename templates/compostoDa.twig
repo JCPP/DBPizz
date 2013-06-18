@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Clienti{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("CompostodaAdd") }}">Aggiungi un composto da</a></br>
+	{% if compostoda %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID Prodotto</th>
+					<th>ID Ingrediente</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for compostodaSingle in compostoda %}
+					<tr>
+						<td>{{ compostodaSingle.IDProdotto }}</td>
+						<td>{{ compostodaSingle.IDIngrediente }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun composto da trovato.
+	{% endif %}
+{% endblock %}

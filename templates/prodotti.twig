@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Prodotti{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("ProdottiAdd") }}">Aggiungi un prodotto</a></br>
+	{% if prodotti %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Prezzo</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for prodotto in prodotti %}
+					<tr>
+						<td>{{ prodotto.IDProdotto }}</td>
+						<td>{{ prodotto.Nome_Pr }}</td>
+						<td>{{ prodotto.Prezzo_Pr }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun prodotto trovato.
+	{% endif %}
+{% endblock %}

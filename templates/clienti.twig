@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Clienti{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("ClientiAdd") }}">Aggiungi un cliente</a></br>
+	{% if clienti %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Cognome</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for cliente in clienti %}
+					<tr>
+						<td><a href="{{ app.urlFor('Cliente', {'id': cliente.IDCliente}) }}">{{ cliente.IDCliente }}</a></td>
+						<td>{{ cliente.Nome_Cl }}</td>
+						<td>{{ cliente.Cognome_Cl }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun cliente trovato.
+	{% endif %}
+{% endblock %}

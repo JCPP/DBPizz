@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Cliente - {{ cliente.Nome_Cl ~ ' ' ~ cliente.Cognome_Cl }}{% endblock %}
+
+{% block content %}
+	ID: {{ cliente.IDCliente }}<br/>
+	Nome: {{ cliente.Nome_Cl }}<br/>
+	Cognome: {{ cliente.Cognome_Cl }}<br/>
+	Ordini: <br/>
+	{% if ordini %}
+		{% for ordine in ordini %}
+			Prodotto: {{ ordine.IDProdotto }}<br/>
+		{% endfor %}
+	{% else %}
+		Nessun ordine.
+	{% endif %}
+{% endblock %}

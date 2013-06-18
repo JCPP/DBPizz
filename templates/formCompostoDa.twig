@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Composto da{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("CompostodaAddPost") }}">
+	<label for="IDProdotto">ID Prodotto</label>
+	<input type="text" name="idProdotto" id="IDProdotto"/></br>
+	
+	<label for="IDIngrediente">ID Ingrediente</label>
+	<input type="text" name="idIngrediente" id="IDIngrediente"/></br>
+
+	<input type="submit" value="Aggiungi Composto Da">
+	
+</form>
+{% endblock %}

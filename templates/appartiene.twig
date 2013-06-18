@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Appartiene{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("AppartieneAdd") }}">Aggiungi un appartiene</a></br>
+	{% if appartiene %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID Prodotto</th>
+					<th>ID Pizzeria</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for appartieneSingle in appartiene %}
+					<tr>
+						<td>{{ appartieneSingle.IDProdotto }}</td>
+						<td>{{ appartieneSingle.IDPizzeria }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun appartiene presente.
+	{% endif %}
+{% endblock %}

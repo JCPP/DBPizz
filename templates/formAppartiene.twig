@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Aggiungi Appartiene{% endblock %}
+
+{% block content %}
+<form method="post" action="{{ app.urlFor("AppartieneAddPost") }}">
+	<label for="IDProdotto">IDProdotto</label>
+	<input type="text" name="idProdotto" id="IDProdotto"/></br>
+	
+	<label for="IDPizzeria">IDPizzeria</label>
+	<input type="text" name="idPizzeria" id="IDPizzeria"/></br>
+
+	<input type="submit" value="Aggiungi Appartiene">
+	
+</form>
+{% endblock %}
