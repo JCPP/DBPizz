@@ -11,5 +11,8 @@ $app->get('/', function () use($app){
 //I percorsi per le API
 require 'api/api.php';
 
+//I percorsi per la sezione Cliente
+require 'routesCliente.php';
+
 //I percorsi per la sezione Pizzeria
 require 'routesPizzeria.php';
