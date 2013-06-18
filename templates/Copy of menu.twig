@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Menu{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("pizzerie") }}">Torna indietro</a></br>
+	{% if appartiene %} //controllare condizione
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Prezzo</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for prodotto in appartiene %} //controllare condizione
+					<tr>
+						<td>{{ prodotto.Nome_Pr }}</td>
+						<td>{{ prodotoo.Prezzo_Pr }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun prodotto per questa pizzeria.
+	{% endif %}
+{% endblock %}
