@@ -1,9 +1,9 @@
 {% extends 'base.twig' %}
 
-{% block subtitle %}- Pizzerie{% endblock %}
+{% block subtitle %}- Ordini{% endblock %}
 
 {% block content %}
-	<a href="{{ app.urlFor("HomePage") }}">Torna alla Home</a></br>
+	<a href="{{ app.urlFor("OrdiniAdd") }}">Aggiungi un ordine</a></br>
 	{% if ordini %}
 		<table border="1px">
 			<thead>
@@ -15,13 +15,13 @@
 			<tbody>
 				{% for ordine in ordini %}
 					<tr>
-						<td>{{ prodotto.Nome_Pr }}</td>
-						<td>{{ prodotto.Prezzo_Pr }}</td>
+						<td>{{ ordine.IDCliente }}</td>
+						<td>{{ ordine.IDProdotto }}</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
 	{% else %}
-		Nessuna ordine effettuato.
+		Nessun ordine effettuato.
 	{% endif %}
 {% endblock %}

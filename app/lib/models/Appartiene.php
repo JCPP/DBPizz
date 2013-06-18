@@ -5,6 +5,6 @@
  * @author <a href="https://github.com/DavidePastore">Davide Pastore</a>
  *
  */
-class Appartiene extends Appartiene{
+class Appartiene extends Model{
 
 }

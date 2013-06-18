@@ -3,7 +3,7 @@
 {% block subtitle %}- Aggiungi Ingrediente{% endblock %}
 
 {% block content %}
-<form method="post" action="{{ app.urlFor("PizzerieAddPost") }}"> //bisogna cambiare app.urlFor?
+<form method="post" action="{{ app.urlFor("IngredientiAddPost") }}">
 	<label for="Nome_Ing">Nome</label>
 	<input type="text" name="nome" id="Nome_Ing"/></br>
 

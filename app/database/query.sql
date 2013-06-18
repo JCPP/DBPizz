@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS Ingrediente(
  */
 CREATE TABLE IF NOT EXISTS CompostoDa(
 	IDProdotto INTEGER,
-	IDIngrendiente INTEGER,
-	PRIMARY KEY(IDProdotto, IDIngrendiente)
+	IDIngrediente INTEGER,
+	PRIMARY KEY(IDProdotto, IDIngrediente)
 );
 
 /**
