@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Pizzerie{% endblock %}
+
+{% block content %}
+	<a href="{{ app.urlFor("HomePage") }}">Torna alla Home</a></br>
+	{% if ordini %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>Prodotto</th>
+					<th>Prezzo</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ordine in ordini %}
+					<tr>
+						<td>{{ prodotto.Nome_Pr }}</td>
+						<td>{{ prodotto.Prezzo_Pr }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessuna ordine effettuato.
+	{% endif %}
+{% endblock %}

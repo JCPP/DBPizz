@@ -3,13 +3,14 @@
 {% block subtitle %}- Menu{% endblock %}
 
 {% block content %}
-	<a href="{{ app.urlFor("pizzerie") }}">Torna indietro</a></br>
+	<a href="{{ app.urlFor("PizzerieAdd") }}">Torna indietro</a></br>
 	{% if appartiene %} //controllare condizione
 		<table>
 			<thead>
 				<tr>
 					<th>Nome</th>
 					<th>Prezzo</th>
+					<th>Aggiungi all'ordine</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -17,6 +18,7 @@
 					<tr>
 						<td>{{ prodotto.Nome_Pr }}</td>
 						<td>{{ prodotoo.Prezzo_Pr }}</td>
+						<td>{{<a href="{{ app.urlFor("ordine") }}"</a>}}
 					</tr>
 				{% endfor %}
 			</tbody>
