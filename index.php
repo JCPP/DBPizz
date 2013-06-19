@@ -1,11 +1,7 @@
 <?php
 /**
  * Si registra l'autoloader per i componenti installati.
- * @todo inserire la data dell'ordine.
- * @todo possibilità di vedere tutti gli ordini di un determinato giorno.
- * @todo cerca pizzeria versatile.
- * @todo incasso giornaliero di una pizzeria tramite portale.
- * @todo cerca prodotto in base agli ingredienti.
+ *
  */
 require 'vendor/autoload.php';
 
