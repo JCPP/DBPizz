@@ -3,7 +3,8 @@
 $app->get('/prodotti/', function () use($app){
 	$app->render('prodotti.twig', array(
 			'app' => $app,
-			'prodotti' => Model::factory('Prodotto')->find_many()
+			'prodotti' => Model::factory('Prodotto')->find_many(),
+			'ingredienti' => Model::factory('Ingrediente')->find_many()
 	));
 })->name("Prodotti");
 
@@ -43,3 +44,24 @@ $app->post('/prodotti/add/', function () use($app){
 		$app->redirect($app->urlFor("Prodotti"));
 	}
 })->name("ProdottiAddPost");
+
+//Cerca un Prodotto (POST)
+$app->post('/prodotti/cerca/', function () use($app){
+	$postVars = $app->request()->post();
+
+	$prodotti = Model::factory('Prodotto');
+
+	foreach($postVars as $key => $postVar){
+		if(!empty($postVar)){
+			$prodotti->where($key, $postVar);
+		}
+	}
+
+	$prodotti = $prodotti->find_many();
+
+	$app->render('prodottiRicerca.twig', array(
+			'app' => $app,
+			'prodotti' => $prodotti
+	));
+
+})->name("ProdottiRicerca");

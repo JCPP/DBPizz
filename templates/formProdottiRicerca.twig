@@ -1,0 +1,22 @@
+<div id="ricerca">
+	Ricerca personalizzata:<br/>
+	<form method="post" action="{{ app.urlFor('ProdottiRicerca') }}">
+		<label for="nome">Nome Prodotto</label>
+		<select name="Nome_Pr" id="nome">
+			<option value=""></option>
+			{% for prodotto in prodotti %}
+				<option value="{{ prodotto.Nome_Pr }}">{{ prodotto.Nome_Pr }}</option>
+			{% endfor %}
+		</select><br/>
+		
+		<label for="prezzo">Prezzo Prodotto</label>
+		<select name="Prezzo_Pr" id="prezzo">
+			<option value=""></option>
+			{% for prodotto in prodotti %}
+				<option value="{{ prodotto.Prezzo_Pr }}">{{ prodotto.Prezzo_Pr }}</option>
+			{% endfor %}
+		</select><br/>
+		
+		<input type="submit" value="Ricerca">
+	</form>
+</div>

@@ -4,7 +4,6 @@
  * @todo inserire la data dell'ordine.
  * @todo possibilità di vedere tutti gli ordini di un determinato giorno.
  * @todo cerca pizzeria versatile.
- * @todo cerca prodotto versatile.
  * @todo incasso giornaliero di una pizzeria tramite portale.
  * @todo 
  */

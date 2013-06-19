@@ -1,10 +1,9 @@
 {% extends 'base.twig' %}
 
-{% block subtitle %}- Prodotti{% endblock %}
+{% block subtitle %}- Prodotti Ricerca{% endblock %}
 
 {% block content %}
-	{% include 'formProdottiRicerca.twig' %}
-	<a href="{{ app.urlFor("ProdottiAdd") }}">Aggiungi un prodotto</a></br>
+	<h1>Risultato ricerca</h1>
 	{% if prodotti %}
 		<table border="1px">
 			<thead>
