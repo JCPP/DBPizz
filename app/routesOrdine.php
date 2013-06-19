@@ -3,7 +3,9 @@
 $app->get('/ordini/', function () use($app){
 	$app->render('ordini.twig', array(
 			'app' => $app,
-			'ordini' => Model::factory('Ordine')->find_many()
+			'ordini' => Model::factory('Ordine')->find_many(),
+			'prodotti' => Model::factory('Prodotto')->find_many(),
+			'clienti' => Model::factory('Cliente')->find_many()
 	));
 })->name("Ordini");
 
@@ -41,3 +43,24 @@ $app->post('/ordini/add/', function () use($app){
 		$app->redirect($app->urlFor("Ordini"));
 	}
 })->name("OrdiniAddPost");
+
+//Cerca un ordine (POST)
+$app->post('/ordini/cerca/', function () use($app){
+	$postVars = $app->request()->post();
+	
+	$ordini = Model::factory('Ordine');
+	
+	foreach($postVars as $key => $postVar){
+		if(!empty($postVar)){
+			$ordini->where($key, $postVar);
+		}
+	}
+	
+	$ordini = $ordini->find_many();
+	
+	$app->render('ordiniRicerca.twig', array(
+			'app' => $app,
+			'ordini' => $ordini
+	));
+	
+})->name("OrdiniRicerca");
