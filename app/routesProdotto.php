@@ -12,7 +12,8 @@ $app->get('/prodotti/', function () use($app){
 $app->get('/prodotti/add/', function () use($app){
 
 	$app->render('formProdotti.twig', array(
-			'app' => $app
+			'app' => $app,
+			'ingredienti' => Model::factory('Ingrediente')->find_many()
 	));
 })->name("ProdottiAdd");
 
@@ -20,6 +21,7 @@ $app->get('/prodotti/add/', function () use($app){
 $app->post('/prodotti/add/', function () use($app){
 	$request = $app->request();
 	$postVars = $request->post();
+	
 	$url = $request->getUrl() . $app->urlFor("APIProdottiAdd");
 
 	$response = \Httpful\Request::post($url)    // Build a POST request...

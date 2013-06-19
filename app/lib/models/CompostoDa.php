@@ -7,4 +7,6 @@
  */
 class CompostoDa extends Model{
 	public static $_table = 'CompostoDa';
+	
+	
 }

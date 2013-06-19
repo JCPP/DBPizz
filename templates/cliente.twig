@@ -8,9 +8,24 @@
 	Cognome: {{ cliente.Cognome_Cl }}<br/>
 	Ordini: <br/>
 	{% if ordini %}
-		{% for ordine in ordini %}
-			Prodotto: {{ ordine.IDProdotto }}<br/>
-		{% endfor %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>Nome Prodotto</th>
+					<th>Prezzo Prodotto</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ordine in ordini %}
+					{% set prodotto = ordine.prodotto().find_many() %}
+					<tr>
+						<td>{{ prodotto[0].Nome_Pr }}</td>
+						<td>{{ prodotto[0].Prezzo_Pr }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		
 	{% else %}
 		Nessun ordine.
 	{% endif %}

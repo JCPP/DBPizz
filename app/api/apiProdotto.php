@@ -1,4 +1,7 @@
 <?php
+/**
+ * @todo inserire gli ingredienti con la chiamata alle API.
+ */
 //Creare un nuovo prodotto
 $app->post('/api/prodotti/add', function () use($app){
 	$json = $app->request()->getBody();
@@ -16,7 +19,16 @@ $app->post('/api/prodotti/add', function () use($app){
 	$prodottoDB->Nome_Pr = $prodotto->nome;
 	$prodottoDB->Prezzo_Pr = $prodotto->prezzo;
 	$prodottoDB->save();
-
+	
+	if(property_exists($prodotto, "ingredienti")){
+		//Aggiungo gli ingredienti al prodotto
+		foreach($prodotto->ingredienti as $compostoda){
+			$compostodaDB = Model::factory('CompostoDa')->create();
+			$compostodaDB->IDProdotto = $prodottoDB->id();
+			$compostodaDB->IDIngrediente = $compostoda;
+			$compostodaDB->save();
+		}
+	}
+	
 	exit('{"successo": "true"}');
-
 })->name("APIProdottiAdd");

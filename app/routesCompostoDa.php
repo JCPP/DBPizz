@@ -1,6 +1,7 @@
 <?php
 //Composto da
 $app->get('/compostoda/', function () use($app){
+	//Model::factory('CompostoDa')->group_by('IDProdotto')->find_many()
 	$app->render('compostoda.twig', array(
 			'app' => $app,
 			'compostoda' => Model::factory('CompostoDa')->find_many()
