@@ -5,7 +5,7 @@
  * @todo possibilità di vedere tutti gli ordini di un determinato giorno.
  * @todo cerca pizzeria versatile.
  * @todo incasso giornaliero di una pizzeria tramite portale.
- * @todo 
+ * @todo cerca prodotto in base agli ingredienti.
  */
 require 'vendor/autoload.php';
 
