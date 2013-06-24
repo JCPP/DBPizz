@@ -51,13 +51,28 @@ $app->post('/prodotti/cerca/', function () use($app){
 
 	$prodotti = Model::factory('Prodotto');
 
+	//Creo una query personalizzata
 	foreach($postVars as $key => $postVar){
 		if(!empty($postVar)){
-			$prodotti->where($key, $postVar);
+			if($key == "IDIngrediente"){
+				$prodotti->join('CompostoDa', array(
+						'Prodotto.IDProdotto', '=', 'CompostoDa.IDProdotto'
+					))
+					->join('Ingrediente', array(
+							'CompostoDa.IDIngrediente', '=', 'Ingrediente.IDIngrediente'
+					));
+				$prodotti->having_raw("count(*) = " . count($postVar));
+				$prodotti->where_in('Ingrediente.IDIngrediente', $postVar);
+			}
+			else{
+				$prodotti->where($key, $postVar);
+			}
 		}
 	}
 
-	$prodotti = $prodotti->find_many();
+	$prodotti = $prodotti->group_by('Prodotto.IDProdotto')->find_many();
+	
+	//echo "Query creata: ".ORM::get_last_query();
 
 	$app->render('prodottiRicerca.twig', array(
 			'app' => $app,

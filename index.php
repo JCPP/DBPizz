@@ -1,7 +1,6 @@
 <?php
 /**
  * Si registra l'autoloader per i componenti installati.
- *
  */
 require 'vendor/autoload.php';
 

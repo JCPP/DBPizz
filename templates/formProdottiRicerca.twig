@@ -17,6 +17,14 @@
 			{% endfor %}
 		</select><br/>
 		
+		<label for="ingredienti">Ingredienti</label>
+		<select name="IDIngrediente[]" multiple="multiple" id="ingredienti">
+			<option value=""></option>
+			{% for ingrediente in ingredienti %}
+				<option value="{{ ingrediente.IDIngrediente }}">{{ ingrediente.Nome_Ing }}</option>
+			{% endfor %}
+		</select><br/>
+		
 		<input type="submit" value="Ricerca">
 	</form>
 </div>
