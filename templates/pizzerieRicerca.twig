@@ -1,10 +1,9 @@
 {% extends 'base.twig' %}
 
-{% block subtitle %}- Pizzerie{% endblock %}
+{% block subtitle %}- Pizzerie Ricerca{% endblock %}
 
 {% block content %}
-	{% include 'formPizzeriaRicerca.twig' %}
-	<a href="{{ app.urlFor("PizzerieAdd") }}">Aggiungi una pizzeria</a></br>
+	<h1>Risultato ricerca</h1>
 	{% if pizzerie %}
 		<table border="1px">
 			<thead>

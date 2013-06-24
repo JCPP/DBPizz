@@ -20,7 +20,7 @@
 		<label for="ordine">Ordine</label>
 		<select name="DataOrdine" id="ordine">
 			<option value=""></option>
-			{# Array vuoto che conterrà tutti gli orari trovati #}
+			{# Array vuoto che conterrà tutti gli orari trovati per evitare di scrivere più volte la stessa ora #}
 			{% set dataOrdine = [] %}
 			{% for ordine in ordini %}
 				{% if ordine.DataOrdine|date("d/m/Y") not in dataOrdine %}

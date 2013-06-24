@@ -1,0 +1,89 @@
+<div id="ricerca">
+	Ricerca personalizzata:<br/>
+	<form method="post" action="{{ app.urlFor('PizzerieRicerca') }}">
+		<label for="nome">Nome</label>
+		<select name="Nome_Pizz" id="nome">
+			<option value=""></option>
+			{% for pizzeria in pizzerie %}
+				<option value="{{ pizzeria.Nome_Pizz }}">{{ pizzeria.Nome_Pizz }}</option>
+			{% endfor %}
+		</select><br/>
+		
+		<label for="numero">Numero Telefonico</label>
+		<select name="Numero_Tel" id="numero">
+			<option value=""></option>
+			{% for pizzeria in pizzerie %}
+				<option value="{{ pizzeria.Numero_Tel }}">{{ pizzeria.Numero_Tel }}</option>
+			{% endfor %}
+		</select><br/>
+		
+		<label for="cap">CAP</label>
+		<select name="CAP" id="cap">
+			<option value=""></option>
+			{# Array vuoto che conterrà tutti i CAP trovati per evitare di scrivere più volte lo stesso CAP #}
+			{% set CAP = [] %}
+			
+			{% for pizzeria in pizzerie %}
+				{% if pizzeria.CAP not in CAP %}
+					{% set CAP = CAP|merge([pizzeria.CAP]) %}
+				
+					<option value="{{ pizzeria.CAP }}">{{ pizzeria.CAP }}</option>
+				{% endif %}
+			{% endfor %}
+		</select><br/>
+		
+		<label for="paese">Paese</label>
+		<select name="Paese" id="paese">
+			<option value=""></option>
+			{# Array vuoto che conterrà tutti i paesi trovati per evitare di scrivere più volte lo stesso paese #}
+			{% set paese = [] %}
+			
+			{% for pizzeria in pizzerie %}
+				{% if pizzeria.Paese not in paese %}
+					{% set paese = paese|merge([pizzeria.Paese]) %}
+					
+					<option value="{{ pizzeria.Paese }}">{{ pizzeria.Paese }}</option>
+				{% endif %}
+			{% endfor %}
+		</select><br/>
+		
+		<label for="via">Via</label>
+		<select name="Via" id="via">
+			<option value=""></option>
+			{# Array vuoto che conterrà tutte le vie trovati per evitare di scrivere più volte la stessa via #}
+			{% set via = [] %}
+			
+			{% for pizzeria in pizzerie %}
+				{% if pizzeria.Via not in via %}
+					{% set via = via|merge([pizzeria.Via]) %}
+					
+					<option value="{{ pizzeria.Via }}">{{ pizzeria.Via }}</option>
+				{% endif %}
+			{% endfor %}
+		</select><br/>
+		
+		<label for="civico">Civico</label>
+		<select name="Civico" id="civico">
+			<option value=""></option>
+			{# Array vuoto che conterrà tutti i civici trovati per evitare di scrivere più volte lo stesso civico #}
+			{% set civico = [] %}
+			
+			{% for pizzeria in pizzerie %}
+				{% if pizzeria.Civico not in civico %}
+					{% set civico = civico|merge([pizzeria.Civico]) %}
+					
+					<option value="{{ pizzeria.Civico }}">{{ pizzeria.Civico }}</option>
+				{% endif %}
+			{% endfor %}
+		</select><br/>
+		
+		<label for="asporto">Asporto</label>
+		<select name="Asporto" id="asporto">
+			<option value=""></option>
+			<option value="true">Sì</option>
+			<option value="false">No</option>
+		</select><br/>
+		
+		<input type="submit" value="Ricerca">
+	</form>
+</div>

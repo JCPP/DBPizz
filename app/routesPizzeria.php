@@ -41,3 +41,25 @@ $app->post('/pizzerie/add/', function () use($app){
 		$app->redirect($app->urlFor("Pizzerie"));
 	}
 })->name("PizzerieAddPost");
+
+
+//Cerca una pizzeria (POST)
+$app->post('/pizzerie/cerca/', function () use($app){
+	$postVars = $app->request()->post();
+
+	$pizzerie = Model::factory('Pizzeria');
+
+	foreach($postVars as $key => $postVar){
+		if(!empty($postVar)){
+			$pizzerie->where($key, $postVar);
+		}
+	}
+
+	$pizzerie = $pizzerie->find_many();
+
+	$app->render('pizzerieRicerca.twig', array(
+			'app' => $app,
+			'pizzerie' => $pizzerie
+	));
+
+})->name("PizzerieRicerca");
