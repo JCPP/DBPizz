@@ -20,8 +20,15 @@
 		<label for="ordine">Ordine</label>
 		<select name="DataOrdine" id="ordine">
 			<option value=""></option>
+			{# Array vuoto che conterrà tutti gli orari trovati #}
+			{% set dataOrdine = [] %}
 			{% for ordine in ordini %}
-				<option value="{{ ordine.DataOrdine }}">{{ ordine.DataOrdine }}</option>
+				{% if ordine.DataOrdine|date("d/m/Y") not in dataOrdine %}
+				
+					{% set dataOrdine = dataOrdine|merge([ordine.DataOrdine|date('d/m/Y')]) %}
+					
+					<option value="{{ ordine.DataOrdine|date("Y-m-d") }}">{{ ordine.DataOrdine|date("d/m/Y") }}</option>
+				{% endif %}
 			{% endfor %}
 		</select><br/>
 		

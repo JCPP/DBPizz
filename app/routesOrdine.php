@@ -52,7 +52,13 @@ $app->post('/ordini/cerca/', function () use($app){
 	
 	foreach($postVars as $key => $postVar){
 		if(!empty($postVar)){
-			$ordini->where($key, $postVar);
+			if( $key == "DataOrdine"){
+				$ordini->where_gte($key, $postVar . " 00:00:00");
+				$ordini->where_lte($key, $postVar . " 23:59:59");
+			}
+			else{
+				$ordini->where($key, $postVar);
+			}
 		}
 	}
 	
