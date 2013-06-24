@@ -1,0 +1,78 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Pizzeria - {{ pizzeria.Nome_Pizz }}{% endblock %}
+
+{% block content %}
+	ID: {{ pizzeria.IDPizzeria }}<br/>
+	Nome: {{ pizzeria.Nome_Pizz }}<br/>
+	Numero telefonico: {{ pizzeria.Numero_Tel }}<br/>
+	CAP: {{ pizzeria.CAP }}<br/>
+	Paese: {{ pizzeria.Paese }}<br/>
+	Via: {{ pizzeria.Via }}<br/>
+	Civico: {{ pizzeria.Civico }}<br/>
+	Asporto: {{ pizzeria.Asporto }}<br/>
+	Prodotti: <br/>
+	{% if prodotti %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Prezzo</th>
+					<th>Ingredienti</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for prodotto in prodotti %}
+					<tr>
+						<td>{{ prodotto.IDProdotto }}</td>
+						<td>{{ prodotto.Nome_Pr }}</td>
+						<td>{{ prodotto.Prezzo_Pr }}</td>
+						{% set ingredienti = prodotto.ingredienti().find_many() %}
+						<td>
+						{% if ingredienti %}
+							{% for ingrediente in ingredienti %}
+								{{ ingrediente.Nome_Ing }}
+								{% if loop.last == false %}
+								,
+								{% endif %}
+							{% endfor %}
+							
+						{% else %}
+							 
+						{% endif %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Nessun prodotto trovato.
+	{% endif %}
+	<br/>
+	
+	Ordini: <br/>
+	{% if ordini %}
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>Cliente</th>
+					<th>Prodotto</th>
+					<th>Data Ordine</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for ordine in ordini %}
+					<tr>
+						<td>{{ ordine.Nome_Cl ~ ' ' ~ ordine.Cognome_Cl }}</td>
+						<td>{{ ordine.Nome_Pr }}</td>
+						<td>{{ ordine.DataOrdine }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		
+	{% else %}
+		Nessun ordine.
+	{% endif %}
+{% endblock %}

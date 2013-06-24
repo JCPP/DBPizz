@@ -22,7 +22,7 @@
 			<tbody>
 				{% for pizzeria in pizzerie %}
 					<tr>
-						<td>{{ pizzeria.IDPizzeria }}</td>
+						<td><a href="{{ app.urlFor('Pizzeria', {'id': pizzeria.IDPizzeria}) }}">{{ pizzeria.IDPizzeria }}</a></td>
 						<td>{{ pizzeria.Nome_Pizz }}</td>
 						<td>{{ pizzeria.Numero_Tel }}</td>
 						<td>{{ pizzeria.CAP }}</td>

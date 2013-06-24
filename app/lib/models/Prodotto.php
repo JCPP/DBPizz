@@ -14,4 +14,11 @@ class Prodotto extends Model{
 	public function ingredienti(){
 		return $this->has_many_through('Ingrediente', 'CompostoDa', 'IDProdotto', 'IDIngrediente');
 	}
+	
+	/**
+	 * Restituisce tutti gli ordini di un prodotto.
+	 */
+	public function ordini(){
+		return $this->has_many('Ordine', 'IDProdotto');
+	}
 }

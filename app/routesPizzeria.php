@@ -63,3 +63,34 @@ $app->post('/pizzerie/cerca/', function () use($app){
 	));
 
 })->name("PizzerieRicerca");
+
+//Pizzeria
+$app->get('/pizzerie/:id', function ($id) use($app){
+	$pizzeria = Model::factory('Pizzeria')->find_one($id);
+	if (! $pizzeria instanceof Pizzeria) {
+		$app->render('errore.twig', array(
+				'app' => $app,
+				'errore' => 'Pizzeria con id ' . $id . 'non esistente.'
+		));
+	}
+	
+	$prodottiQuery = $pizzeria->prodotti();
+
+	$prodotti = $prodottiQuery->find_many();
+	
+	$ordiniQuery = $prodottiQuery->join('Ordine', array(
+						'Prodotto.IDProdotto', '=', 'Ordine.IDProdotto'
+					))
+					->join('Cliente', array(
+						'Ordine.IDCliente', '=', 'Cliente.IDCliente'
+					));
+	
+	$ordini = $ordiniQuery->find_many();
+
+	$app->render('pizzeria.twig', array(
+			'app' => $app,
+			'pizzeria' => $pizzeria,
+			'prodotti' => $prodotti,
+			'ordini' => $ordini
+	));
+})->name("Pizzeria");
