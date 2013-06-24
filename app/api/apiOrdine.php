@@ -15,6 +15,7 @@ $app->post('/api/ordini/add', function () use($app){
 	$ordineDB = Model::factory('Ordine')->create();
 	$ordineDB->IDCliente = $ordine->idCliente;
 	$ordineDB->IDProdotto = $ordine->idProdotto;
+	$ordineDB->DataOrdine = $ordine->dataOrdine;
 	$ordineDB->save();
 
 	exit('{"successo": "true"}');

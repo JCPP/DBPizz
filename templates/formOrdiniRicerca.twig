@@ -17,6 +17,14 @@
 			{% endfor %}
 		</select><br/>
 		
+		<label for="ordine">Ordine</label>
+		<select name="DataOrdine" id="ordine">
+			<option value=""></option>
+			{% for ordine in ordini %}
+				<option value="{{ ordine.DataOrdine }}">{{ ordine.DataOrdine }}</option>
+			{% endfor %}
+		</select><br/>
+		
 		<input type="submit" value="Ricerca">
 	</form>
 </div>

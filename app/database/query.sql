@@ -1,4 +1,9 @@
 /**
+ *  Le date sono da considerare nel formato ISO8601 ("YYYY-MM-DD HH:MM:SS").
+ */
+
+
+/**
  * Creazione tabella Cliente
  */
 CREATE TABLE IF NOT EXISTS Cliente(
@@ -22,6 +27,7 @@ CREATE TABLE IF NOT EXISTS Prodotto(
 CREATE TABLE IF NOT EXISTS Ordine(
 	IDCliente INTEGER,
 	IDProdotto INTEGER,
+	DataOrdine VARCHAR(18) NOT NULL,
 	PRIMARY KEY(IDCliente, IDProdotto)
 );
 
