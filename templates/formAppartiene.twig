@@ -4,11 +4,21 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("AppartieneAddPost") }}">
-	<label for="IDProdotto">IDProdotto</label>
-	<input type="text" name="idProdotto" id="IDProdotto"/></br>
+	<label for="IDProdotto">Prodotto</label>
+	<select name="idProdotto" id="IDProdotto">
+		<option value=""></option>
+		{% for prodotto in prodotti %}
+			<option value="{{ prodotto.IDProdotto }}"> {{ prodotto.Nome_Pr }}</option>
+		{% endfor %}
+	</select><br/>
 	
-	<label for="IDPizzeria">IDPizzeria</label>
-	<input type="text" name="idPizzeria" id="IDPizzeria"/></br>
+	<label for="IDPizzeria">Pizzeria</label>
+	<select name="idPizzeria" id="IDPizzeria">
+		<option value=""></option>
+		{% for pizzeria in pizzerie %}
+			<option value="{{ pizzeria.IDPizzeria }}"> {{ pizzeria.Nome_Pizz }}</option>
+		{% endfor %}
+	</select><br/>
 
 	<input type="submit" value="Aggiungi Appartiene">
 	

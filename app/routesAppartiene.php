@@ -21,7 +21,9 @@ $app->get('/appartiene/', function () use($app){
 $app->get('/appartiene/add/', function () use($app){
 
 	$app->render('formAppartiene.twig', array(
-			'app' => $app
+			'app' => $app,
+			'pizzerie' => Model::factory('Pizzeria')->find_many(),
+			'prodotti' => Model::factory('Prodotto')->find_many()
 	));
 })->name("AppartieneAdd");
 
