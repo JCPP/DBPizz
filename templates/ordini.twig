@@ -9,16 +9,16 @@
 		<table border="1px">
 			<thead>
 				<tr>
-					<th>ID Cliente</th>
-					<th>ID Prodotto</th>
+					<th>Cliente</th>
+					<th>Prodotto</th>
 					<th>Data</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for ordine in ordini %}
 					<tr>
-						<td>{{ ordine.IDCliente }}</td>
-						<td>{{ ordine.IDProdotto }}</td>
+						<td>{{ ordine.Nome_Cl ~ ' ' ~ ordine.Cognome_Cl }}</td>
+						<td>{{ ordine.Nome_Pr }}</td>
 						<td>{{ ordine.DataOrdine }}</td>
 					</tr>
 				{% endfor %}

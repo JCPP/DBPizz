@@ -1,9 +1,19 @@
 <?php
 //Ordini
 $app->get('/ordini/', function () use($app){
+	
+	$ordini = Model::factory('Ordine')->join('Cliente', array(
+			'Ordine.IDCliente', '=', 'Cliente.IDCliente'
+		))
+		->join('Prodotto', array(
+				'Ordine.IDProdotto', '=', 'Prodotto.IDProdotto'
+		))
+		->group_by('IDProdotto')
+		->group_by('IDCliente');
+	
 	$app->render('ordini.twig', array(
 			'app' => $app,
-			'ordini' => Model::factory('Ordine')->find_many(),
+			'ordini' => $ordini->find_many(),
 			'prodotti' => Model::factory('Prodotto')->find_many(),
 			'clienti' => Model::factory('Cliente')->find_many()
 	));
@@ -52,15 +62,32 @@ $app->post('/ordini/cerca/', function () use($app){
 	
 	foreach($postVars as $key => $postVar){
 		if(!empty($postVar)){
-			if( $key == "DataOrdine"){
-				$ordini->where_gte($key, $postVar . " 00:00:00");
-				$ordini->where_lte($key, $postVar . " 23:59:59");
-			}
-			else{
-				$ordini->where($key, $postVar);
+			switch ($key){
+				case "DataOrdine":
+					$ordini->where_gte($key, $postVar . " 00:00:00");
+					$ordini->where_lte($key, $postVar . " 23:59:59");
+					break;
+				case "IDCliente":
+					$ordini->where('Cliente.' . $key, $postVar);
+					break;
+				case "IDProdotto":
+					$ordini->where('Prodotto.' . $key, $postVar);
+					break;
+				default:
+					$ordini->where($key, $postVar);
+					break;
 			}
 		}
 	}
+	
+	$ordini->join('Cliente', array(
+			'Ordine.IDCliente', '=', 'Cliente.IDCliente'
+		))
+		->join('Prodotto', array(
+				'Ordine.IDProdotto', '=', 'Prodotto.IDProdotto'
+		))
+		->group_by('IDProdotto')
+		->group_by('IDCliente');
 	
 	$ordini = $ordini->find_many();
 	
