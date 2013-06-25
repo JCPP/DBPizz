@@ -1,9 +1,10 @@
 DBPizz
 ======
 
+<!---
 Cos'è DBPizz?
 -------------
-<!---
+
 DBPizz è un portale che permette una più rapida e trasparente comunicazione tra cliente e pizzeria.
 Il cliente avrà la possibilità di poter scorrere i menù delle pizzerie iscritte, egli avrà la possibilità di creare un'ordinazione solo dopo una registrazione che ne accuri l'identità, onde evitare scherzi e prevenire gli interessi e la professionalità della pizzeria in questione.
 Il cliente si troverà nella condizione di scegliere se andare a ritirare il prodotto o farselo reperire a domicilio.
@@ -40,4 +41,22 @@ Dopo aver scompattato l'archivio, si deve aprire la console, entrare nella carte
     composer update
 
 Composer effettuerà il download delle dipendenze di cui ha bisogno il progetto.
-Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](localhost).
+Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](http://localhost).
+
+
+Interfaccia Web
+---------------
+
+L'interfaccia Web risulta essere molto intuitiva ed è costituita da 8 parti principali:
+
+* [Home Page](#home-page)
+* Cliente
+* Prodotto
+* Ordine
+* Ingrediente
+* Composto Da
+* Pizzerie
+* Appartenere
+
+### Home Page ###
+Questa pagina è vuota e contiene solo un semplice menu con tutte le varie sezioni del sito.
