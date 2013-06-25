@@ -22,7 +22,7 @@ Per il portale si prevede l'implementazione della comunicazione tramite smartpho
 -->
 
 DBPizz è uno scheletro di ciò che un giorno potrà essere un portale per facilitare l'interazione tra cliente e pizzeria.
-Questo lavoro, puramente didattico, punta a dimostrare le nostre capacità nell'interfacciamento con i database e non ha nessuna finalità per un ambiente produttivo.
+Questo lavoro, puramente didattico, punta a dimostrare le nostre capacità nell'interfacciamento con i database e non ha nessuna finalità attuale per un ambiente produttivo.
 
 
 Progettazione
@@ -50,8 +50,8 @@ Interfaccia Web
 L'interfaccia Web risulta essere molto intuitiva ed è costituita da 8 parti principali:
 
 * [Home Page](#home-page)
-* Cliente
-* Prodotto
+* [Cliente] (#cliente)
+* [Prodotto] (#prodotto)
 * Ordine
 * Ingrediente
 * Composto Da
@@ -60,3 +60,19 @@ L'interfaccia Web risulta essere molto intuitiva ed è costituita da 8 parti prin
 
 ### Home Page ###
 Questa pagina è vuota e contiene solo un semplice menu con tutte le varie sezioni del sito.
+
+### Cliente ###
+Questa pagina contiene la lista dei Clienti aggiunti al database e il link per il form di aggiunta.
+Tramite il bottone apposito si possono aggiungere nuovi clienti, indicandone il nome e il cognome.
+Nel caso in cui uno dei due campi non venga inserito, il sistema riporta l'errore.
+
+### Prodotto ###
+Questa pagina contiene la lista dei Prodotti aggiunti al database, il link per il form di aggiunta e un form per la ricerca personalizzata.
+
+#### Aggiungi prodotto ####
+Tramite il bottone apposito si possono aggiungere nuovi prodotti, indicandone il nome, il prezzo e gli ingredienti di cui è composto.
+Nel caso in cui uno dei campi (a parte l'ingrediente) non venga inserito, il sistema riporta l'errore.
+
+#### Ricerca prodotto ####
+La ricerca può avvenire in base ai tre campi indicati nel paragrafo precedente.
+Il sistema supporta la ricerca dei prodotti anche in base a più ingredienti.
