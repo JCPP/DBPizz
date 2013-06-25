@@ -3,7 +3,7 @@ DBPizz
 
 Cos'è DBPizz?
 -------------
-
+<!---
 DBPizz è un portale che permette una più rapida e trasparente comunicazione tra cliente e pizzeria.
 Il cliente avrà la possibilità di poter scorrere i menù delle pizzerie iscritte, egli avrà la possibilità di creare un'ordinazione solo dopo una registrazione che ne accuri l'identità, onde evitare scherzi e prevenire gli interessi e la professionalità della pizzeria in questione.
 Il cliente si troverà nella condizione di scegliere se andare a ritirare il prodotto o farselo reperire a domicilio.
@@ -18,3 +18,26 @@ Quali sviluppi si prospettano per DBPizz?
 -----------------------------------------
 
 Per il portale si prevede l'implementazione della comunicazione tramite smartphone con applicazione Android.
+-->
+
+DBPizz è uno scheletro di ciò che un giorno potrà essere un portale per facilitare l'interazione tra cliente e pizzeria.
+Questo lavoro, puramente didattico, punta a dimostrare le nostre capacità nell'interfacciamento con i database e non ha nessuna finalità per un ambiente produttivo.
+
+
+Progettazione
+-------------
+
+La progettazione può essere visionata nella [cartella progettazione](https://github.com/JCPP/DBPizz/tree/master/progettazione).
+
+
+Come provare il progetto
+------------------------
+
+Per poter testare il progetto sulla propria macchina, è necessario avere installato [PHP](http://php.net/) e [Composer](http://getcomposer.org/).
+Una volta aver scaricato questi software, si deve effettuare il download del progetto da [github](https://github.com/JCPP/DBPizz/archive/master.zip) e posizionarlo nella propria cartella del root server.
+Dopo aver scompattato l'archivio, si deve aprire la console, entrare nella cartella in cui abbiamo il progetto e digitare:
+
+    composer update
+
+Composer effettuerà il download delle dipendenze di cui ha bisogno il progetto.
+Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](localhost).
