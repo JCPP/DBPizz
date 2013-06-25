@@ -94,3 +94,45 @@ $app->get('/pizzerie/:id', function ($id) use($app){
 			'ordini' => $ordini
 	));
 })->name("Pizzeria");
+
+//Pizzeria
+$app->post('/pizzeria/:id/calcolaincasso/', function ($id) use($app){
+	$postVars = $app->request()->post();
+	
+	$dataOrdine = null;
+	
+	$pizzeria = Model::factory('Pizzeria');
+
+	$pizzeria->join('Appartiene', array(
+			'Pizzeria.IDPizzeria', '=', 'Appartiene.IDPizzeria'
+		))
+		->join('Ordine', array(
+			'Appartiene.IDProdotto', '=', 'Ordine.IDProdotto'
+		))
+		->join('Prodotto', array(
+			'Ordine.IDProdotto', '=', 'Prodotto.IDProdotto'
+		));
+	
+	foreach($postVars as $key => $postVar){
+		if(!empty($postVar)){
+			if($key == "DataOrdine"){
+				$pizzeria->where_gte('Ordine.' . $key, $postVar . " 00:00:00");
+				$pizzeria->where_lte('Ordine.' . $key, $postVar . " 23:59:59");
+				$dataOrdine = $postVar;
+			}
+			else{
+				$pizzeria->where($key, $postVar);
+			}
+		}
+	}
+	
+	$pizzeria->where('Pizzeria.IDPizzeria', $id);
+	
+	$incasso = $pizzeria->sum('Prodotto.Prezzo_Pr');
+
+	$app->render('pizzeriaCalcolaIncasso.twig', array(
+			'app' => $app,
+			'incasso' => $incasso,
+			'dataOrdine' => $dataOrdine
+	));
+})->name("PizzeriaCalcolaIncasso");

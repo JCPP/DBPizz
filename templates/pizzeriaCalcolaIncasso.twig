@@ -1,0 +1,10 @@
+{% extends 'base.twig' %}
+
+{% block subtitle %}- Pizzeria - {{ pizzeria.Nome_Pizz }} - Incasso{% endblock %}
+
+{% block content %}
+	{% if dataOrdine %}
+		Data Ordine: {{ dataOrdine }}<br/>
+	{% endif %}
+	Incasso: € {{ incasso }}<br/>
+{% endblock %}
