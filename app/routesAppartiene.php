@@ -1,9 +1,18 @@
 <?php
 //Appartiene
 $app->get('/appartiene/', function () use($app){
+	
+	$appartiene = Model::factory('Appartiene');
+	$appartiene->join('Prodotto', array(
+			'Appartiene.IDProdotto', '=', 'Prodotto.IDProdotto'	
+		))
+		->join('Pizzeria', array(
+			'Appartiene.IDPizzeria', '=', 'Pizzeria.IDPizzeria'	
+		));
+	
 	$app->render('appartiene.twig', array(
 			'app' => $app,
-			'appartiene' => Model::factory('Appartiene')->find_many()
+			'appartiene' => $appartiene->find_many()
 	));
 })->name("Appartiene");
 

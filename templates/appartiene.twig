@@ -8,15 +8,15 @@
 		<table border="1px">
 			<thead>
 				<tr>
-					<th>ID Prodotto</th>
-					<th>ID Pizzeria</th>
+					<th>Prodotto</th>
+					<th>Pizzeria</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for appartieneSingle in appartiene %}
 					<tr>
-						<td>{{ appartieneSingle.IDProdotto }}</td>
-						<td>{{ appartieneSingle.IDPizzeria }}</td>
+						<td>{{ appartieneSingle.Nome_Pr }}</td>
+						<td><a href="{{ app.urlFor('Pizzeria', {'id': appartieneSingle.IDPizzeria}) }}">{{ appartieneSingle.Nome_Pizz }}</a></td>
 					</tr>
 				{% endfor %}
 			</tbody>
