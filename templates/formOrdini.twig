@@ -4,11 +4,21 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("OrdiniAddPost") }}">
-	<label for="IDCliente">IDCliente</label>
-	<input type="text" name="idCliente" id="IDCliente"/></br>
+	<label for="IDCliente">Cliente</label>
+	<select name="idCliente" id="IDCliente">
+		<option value=""></option>
+		{% for cliente in clienti %}
+			<option value="{{ cliente.IDCliente }}"> {{ cliente.Nome_Cl ~ ' ' ~ cliente.Cognome_Cl }}</option>
+		{% endfor %}
+	</select><br/>
 	
-	<label for="IDProdotto">IDProdotto</label>
-	<input type="text" name="idProdotto" id="IDProdotto"/></br>
+	<label for="IDProdotto">Prodotto</label>
+	<select name="idProdotto" id="IDProdotto">
+		<option value=""></option>
+		{% for prodotto in prodotti %}
+			<option value="{{ prodotto.IDProdotto }}"> {{ prodotto.Nome_Pr }}</option>
+		{% endfor %}
+	</select><br/>
 	
 	<label for="DataOrdine">Data Ordine (in formato ISO8601)</label>
 	<input type="datetime" name="dataOrdine" id="DataOrdine"><br/>

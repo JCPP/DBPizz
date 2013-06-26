@@ -9,7 +9,8 @@ $app->get('/ordini/', function () use($app){
 				'Ordine.IDProdotto', '=', 'Prodotto.IDProdotto'
 		))
 		->group_by('IDProdotto')
-		->group_by('IDCliente');
+		->group_by('IDCliente')
+		->order_by_desc('Ordine.DataOrdine');
 	
 	$app->render('ordini.twig', array(
 			'app' => $app,
@@ -24,7 +25,9 @@ $app->get('/ordini/', function () use($app){
 $app->get('/ordini/add/', function () use($app){
 
 	$app->render('formOrdini.twig', array(
-			'app' => $app
+			'app' => $app,
+			'prodotti' => Model::factory('Prodotto')->find_many(),
+			'clienti' => Model::factory('Cliente')->find_many()
 	));
 })->name("OrdiniAdd");
 
