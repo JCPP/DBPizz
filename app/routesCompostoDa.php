@@ -13,7 +13,9 @@ $app->get('/compostoda/', function () use($app){
 $app->get('/compostoda/add/', function () use($app){
 
 	$app->render('formcompostoda.twig', array(
-			'app' => $app
+			'app' => $app,
+			'prodotti' => Model::factory('Prodotto')->find_many(),
+			'ingredienti' => Model::factory('Ingrediente')->find_many()
 	));
 })->name("CompostodaAdd");
 
