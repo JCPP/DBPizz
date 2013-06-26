@@ -50,12 +50,20 @@ $app->post('/pizzerie/cerca/', function () use($app){
 	$pizzerie = Model::factory('Pizzeria');
 
 	foreach($postVars as $key => $postVar){
-		if(!empty($postVar)){
+		if(!empty($postVar) ){
+			$pizzerie->where($key, $postVar);
+		}
+		else if($key=="Asporto" && $postVar !== ''){
+			echo("<pre>");
+			print_r($postVars);
+			echo("</pre>");
 			$pizzerie->where($key, $postVar);
 		}
 	}
 
 	$pizzerie = $pizzerie->find_many();
+	
+	echo ORM::get_last_query();
 
 	$app->render('pizzerieRicerca.twig', array(
 			'app' => $app,
