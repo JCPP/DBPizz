@@ -56,7 +56,7 @@ L'interfaccia Web risulta essere molto intuitiva ed è costituita da 8 parti prin
 * [Ingrediente](#ingrediente)
 * [Composto Da](#composto-da)
 * [Pizzerie](#pizzerie)
-* [Appartenere](#appartenere)
+* [Appartiene](#appartiene)
 
 ### Home Page ###
 Questa pagina è vuota e contiene solo un semplice menu con tutte le varie sezioni del sito.
@@ -71,52 +71,52 @@ Nel caso in cui uno dei due campi non venga inserito, il sistema riporta l'error
 ### Prodotto ###
 Questa pagina contiene la lista dei Prodotti aggiunti al database, il link per il form di aggiunta e un form per la ricerca personalizzata.
 
-##### Aggiungi prodotto #####
+#### Aggiungi prodotto ####
 Tramite il bottone apposito si possono aggiungere nuovi prodotti, indicandone il nome, il prezzo e gli ingredienti di cui è composto.
 Nel caso in cui uno dei campi (a parte l'ingrediente) non venga inserito, il sistema riporta l'errore.
 
-##### Ricerca prodotto #####
+#### Ricerca prodotto ####
 La ricerca può avvenire in base ai tre campi indicati nel paragrafo precedente.
 Il sistema supporta la ricerca dei prodotti anche in base a più ingredienti.
 
 ### Ordine ###
 Questa pagina contiene la lista dei Ordini aggiunti al database, il link per il form di aggiunta e un form per la ricerca personalizzata.
 
-##### Aggiungi ordine #####
+#### Aggiungi ordine ####
 Tramite il bottone apposito si possono aggiungere nuovi ordini, indicandone il cliente, il prodotto e la data (nel formato [ISO 8601](http://it.wikipedia.org/wiki/ISO_8601)).
 Nel caso in cui uno dei campi non venga inserito, il sistema riporta l'errore.
 
-##### Ricerca ordine #####
+#### Ricerca ordine ####
 La ricerca può avvenire in base ai tre campi indicati nel paragrafo precedente.
 
 ### Ingrediente ###
 Questa pagina contiene la lista degli ingredienti aggiunti al database e il link per il form di aggiunta.
 
-##### Aggiungi ingrediente #####
+#### Aggiungi ingrediente ####
 Tramite il bottone apposito si possono aggiungere nuovi ingredienti, indicandone il nome.
 Nel caso in cui il campo non venga inserito, il sistema riporta l'errore.
 
 ### Composto da ###
 Questa pagina contiene la lista delle associazioni tra Prodotti e Ingredienti e il link per il form di aggiunta.
 
-##### Aggiungi composto da #####
+#### Aggiungi composto da ####
 Tramite il bottone apposito si possono aggiungere nuovi composto da, indicandone il Prodotto e l'Ingrediente.
 Nel caso in cui uno dei due campi non venga inserito, il sistema riporta l'errore.
 
 ### Pizzeria ###
 Questa pagina contiene la lista delle Pizzerie aggiunte al database, il link per il form di aggiunta e un form per la ricerca personalizzata.
 
-##### Aggiungi pizzeria #####
+#### Aggiungi pizzeria ####
 Tramite il bottone apposito si possono aggiungere nuove pizzerie, indicandone il nome, il numero di telefono, il CAP, il Paese, la via, il numero civico e se supporta l'asporto.
 Nel caso in cui uno dei campi non venga inserito, il sistema riporta l'errore.
 
-##### Ricerca pizzeria #####
+#### Ricerca pizzeria ####
 La ricerca può avvenire in base ai sette campi indicati nel paragrafo precedente.
 
 ### Appartiene ###
 Questa pagina contiene la lista delle associazioni tra Prodotti e Pizzerie e il link per il form di aggiunta.
 
-##### Aggiungi appartiene #####
+#### Aggiungi appartiene ####
 Tramite il bottone apposito si possono aggiungere nuovi appartiene, indicandone il prodotto e la pizzeria.
 Nel caso in cui uno dei campi non venga inserito, il sistema riporta l'errore.
 
