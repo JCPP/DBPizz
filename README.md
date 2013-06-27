@@ -37,9 +37,9 @@ Come provare il progetto
 Per poter testare il progetto sulla propria macchina, è necessario avere installato [PHP](http://php.net/) e [Composer](http://getcomposer.org/).
 Una volta aver scaricato questi software, si deve effettuare il download del progetto da [github](https://github.com/JCPP/DBPizz/archive/master.zip) e posizionarlo nella propria cartella del root server.
 Dopo aver scompattato l'archivio, si deve aprire la console, entrare nella cartella in cui abbiamo il progetto e digitare:
-
+```shell
     composer update
-
+```
 Composer effettuerà il download delle dipendenze di cui ha bisogno il progetto.
 Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](http://localhost).
 
