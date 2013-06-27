@@ -55,7 +55,7 @@ L'interfaccia Web risulta essere molto intuitiva ed è costituita da 8 parti prin
 * [Ordine](#ordine)
 * [Ingrediente](#ingrediente)
 * [Composto Da](#composto-da)
-* [Pizzerie](#pizzerie)
+* [Pizzeria](#pizzeria)
 * [Appartiene](#appartiene)
 
 ### Home Page ###
@@ -132,7 +132,10 @@ alle query che vengono effettuate per salvare i dati di SQLite.
 Probabilmente questo comportamento è dovuto non tanto al numero di inserimenti effettuati, ma al fatto che la versione di PHP utilizzata per lo sviluppo del portale web (5.3.26) non
 ha al suo interno una versione aggiornata di SQLite che permette l'inserimento multiplo di dati, nella forma:
 
-    INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);
+    INSERT INTO tbl_name (a,b,c)
+    VALUES(1,2,3),
+          (4,5,6),
+          (7,8,9);
 
 ### Lettere accentate ###
 La descrizione del problema è riportata [qui](https://github.com/JCPP/DBPizz/issues/6).
