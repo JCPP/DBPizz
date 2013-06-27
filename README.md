@@ -133,9 +133,9 @@ Probabilmente questo comportamento è dovuto non tanto al numero di inserimenti e
 ha al suo interno una versione aggiornata di SQLite che permette l'inserimento multiplo di dati, nella forma:
 
     INSERT INTO tbl_name (a,b,c)
-    VALUES(1,2,3),
-          (4,5,6),
-          (7,8,9);
+        VALUES (1,2,3),
+               (4,5,6),
+               (7,8,9);
 
 ### Lettere accentate ###
 La descrizione del problema è riportata [qui](https://github.com/JCPP/DBPizz/issues/6).
