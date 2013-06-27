@@ -38,7 +38,7 @@ Per poter testare il progetto sulla propria macchina, è necessario avere install
 Una volta aver scaricato questi software, si deve effettuare il download del progetto da [github](https://github.com/JCPP/DBPizz/archive/master.zip) e posizionarlo nella propria cartella del root server.
 Dopo aver scompattato l'archivio, si deve aprire la console, entrare nella cartella in cui abbiamo il progetto e digitare:
 ```shell
-    composer update
+composer update
 ```
 Composer effettuerà il download delle dipendenze di cui ha bisogno il progetto.
 Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](http://localhost).
@@ -133,9 +133,10 @@ Probabilmente questo comportamento è dovuto non tanto al numero di inserimenti e
 ha al suo interno una versione aggiornata di SQLite che permette l'inserimento multiplo di dati, nella forma:
 ```sql
 INSERT INTO tbl_name (a,b,c)
-VALUES (1,2,3),
-	   (4,5,6),
-	   (7,8,9);
+VALUES
+	(1,2,3),
+	(4,5,6),
+	(7,8,9);
 ```
 ### Lettere accentate ###
 La descrizione del problema è riportata [qui](https://github.com/JCPP/DBPizz/issues/6).
