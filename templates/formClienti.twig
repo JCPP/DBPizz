@@ -4,13 +4,18 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("ClientiAddPost") }}">
-	<label for="Nome_Cl">Nome</label>
-	<input type="text" name="nome" id="Nome_Cl"/></br>
-	
-	<label for="Cognome_Cl">Cognome</label>
-	<input type="text" name="cognome" id="Cognome_Cl"/></br>
-
-	<input type="submit" value="Aggiungi Cliente">
-	
+	<table>
+		<tr>
+			<td><label for="Nome_Cl">Nome</label></td>
+			<td><input type="text" name="nome" id="Nome_Cl"/></td>
+		</tr>
+		<tr>
+			<td><label for="Cognome_Cl">Cognome</label></td>
+			<td><input type="text" name="cognome" id="Cognome_Cl"/></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Aggiungi Cliente"></td>
+		</tr>
+	</table>
 </form>
 {% endblock %}
