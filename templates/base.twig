@@ -8,11 +8,29 @@
 		<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
 	</head>
 	<body>
-		<h1 id="titoloSito">DBPizz</h1>
-		{% include 'menu.twig' %}
-		<div id="content">
-			{% block content %}
-			{% endblock %}
+		<div id="wrapper">
+			<div id="header">
+				<h1 id="titoloSito">DBPizz</h1>
+				{% include 'menu.twig' %}
+			</div>
+			<div id="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div id="footer">
+				Sito sviluppato utilizzando:
+				{% set softwareUtilizzati = {
+					'PHP' : "http://php.net/",
+					'Slim Framework': "http://www.slimframework.com/",
+					'Twig': "http://twig.sensiolabs.org/",
+					'Idiorm e Paris': "http://j4mie.github.io/idiormandparis/"
+				} %}
+				<ul>
+					{% for key,software in softwareUtilizzati%}
+						<li><a href={{ software }} target="_blank">{{ key }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>

@@ -3,9 +3,29 @@ body {
 	background-image:url('/images/background.jpg');
 }
 
+#wrapper{
+	border: 1px solid black;
+}
+
 /* Titolo del sito */
 #titoloSito {
 	text-align: center;
+}
+
+/* Contenuto della pagina */
+#content {
+}
+
+/* Tabelle */
+#content table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+
+#footer{
+	border: 1px solid black;
+	margin: 10px;
 }
 
 /* Ricerca */
