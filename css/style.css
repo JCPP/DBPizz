@@ -3,6 +3,11 @@ body {
 	background-image:url('/images/background.jpg');
 }
 
+/* Titolo del sito */
+#titoloSito {
+	text-align: center;
+}
+
 /* Ricerca */
 div#ricerca {
 	border: 1px solid;
