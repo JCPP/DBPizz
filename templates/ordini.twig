@@ -17,7 +17,7 @@
 			<tbody>
 				{% for ordine in ordini %}
 					<tr>
-						<td>{{ ordine.Nome_Cl ~ ' ' ~ ordine.Cognome_Cl }}</td>
+						<td><a href="{{ app.urlFor("Cliente", {'id': ordine.IDCliente}) }}">{{ ordine.Nome_Cl ~ ' ' ~ ordine.Cognome_Cl }}</a></td>
 						<td>{{ ordine.Nome_Pr }}</td>
 						<td>{{ ordine.DataOrdine }}</td>
 					</tr>

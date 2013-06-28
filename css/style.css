@@ -1,3 +1,8 @@
+/* Body */
+body {
+	background-image:url('/images/background.jpg');
+}
+
 /* Ricerca */
 div#ricerca {
 	border: 1px solid;
@@ -36,6 +41,6 @@ ul#menu li a {
 }
   
 ul#menu li.active, ul#menu li:hover {
-    background-color: #000000;
+    background-color: #7F7F7F;
     border-bottom: 5px solid #FF831C;
 }
