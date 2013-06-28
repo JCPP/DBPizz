@@ -1,10 +1,19 @@
 <?php
 //Composto da
 $app->get('/compostoda/', function () use($app){
-	//Model::factory('CompostoDa')->group_by('IDProdotto')->find_many()
+	$compostoDa = Model::factory('CompostoDa')
+		->join('Prodotto', array(
+			'CompostoDa.IDProdotto', '=', 'Prodotto.IDProdotto'
+		))
+		->join('Ingrediente', array(
+			'CompostoDa.IDIngrediente', '=', 'Ingrediente.IDIngrediente'
+		))
+		->group_by('IDProdotto')
+		->find_many();
 	$app->render('compostoda.twig', array(
 			'app' => $app,
-			'compostoda' => Model::factory('CompostoDa')->find_many()
+			'compostoda' => $compostoDa,
+			'prodotti' => Model::factory('Prodotto')->find_many()
 	));
 })->name("Compostoda");
 
