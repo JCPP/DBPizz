@@ -4,32 +4,44 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("PizzerieAddPost") }}">
-	<label for="Nome_Pizz">Nome</label>
-	<input type="text" name="nome" id="Nome_Pizz"/></br>
-	
-	<label for="Numero_Tel">Numero telefono</label>
-	<input type="text" name="tel" id="Numero_Tel"/></br>
-	
-	<label for="CAP">CAP</label>
-	<input type="text" name="cap" id="CAP"/></br>
-	
-	<label for="Paese">Paese</label>
-	<input type="text" name="paese" id="Paese"/></br>
-	
-	<label for="Via">Via</label>
-	<input type="text" name="via" id="Via"/></br>
-	
-	<label for="Civico">Numero civico</label>
-	<input type="text" name="civico" id="Civico"/></br>
-	
-	<label for="Asporto">Asporto</label>
-	<select name="asporto" id="Asporto">
-		<option value="null"></option>
-		<option value="true">Sì</option>
-		<option value="false">No</option>
-	</select></br>
-	
-	<input type="submit" value="Aggiungi pizzeria">
-	
+	<table>
+		<tr>
+			<td><label for="Nome_Pizz">Nome</label></td>
+			<td><input type="text" name="nome" id="Nome_Pizz"/></td>
+		</tr>
+		<tr>
+			<td><label for="Numero_Tel">Numero telefono</label></td>
+			<td><input type="text" name="tel" id="Numero_Tel"/></td>
+		</tr>
+		<tr>
+			<td><label for="CAP">CAP</label></td>
+			<td><input type="text" name="cap" id="CAP"/></td>
+		</tr>
+		<tr>
+			<td><label for="Paese">Paese</label></td>
+			<td><input type="text" name="paese" id="Paese"/></td>
+		</tr>
+		<tr>
+			<td><label for="Via">Via</label></td>
+			<td><input type="text" name="via" id="Via"/></td>
+		</tr>
+		<tr>
+			<td><label for="Civico">Numero civico</label></td>
+			<td><input type="text" name="civico" id="Civico"/></td>
+		</tr>
+		<tr>
+			<td><label for="Asporto">Asporto</label></td>
+			<td>
+				<select name="asporto" id="Asporto">
+					<option value="null"></option>
+					<option value="true">Sì</option>
+					<option value="false">No</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Aggiungi pizzeria"></td>
+		</tr>
+	</table>
 </form>
 {% endblock %}
