@@ -35,13 +35,23 @@ Come provare il progetto
 ------------------------
 
 Per poter testare il progetto sulla propria macchina, è necessario avere installato [PHP](http://php.net/) e [Composer](http://getcomposer.org/).
-Una volta aver scaricato questi software, si deve effettuare il download del progetto da [github](https://github.com/JCPP/DBPizz/archive/master.zip) e posizionarlo nella propria cartella del root server.
+Una volta aver scaricato questi software, si deve effettuare il download del progetto da [github](https://github.com/JCPP/DBPizz/archive/master.zip) e posizionarlo nella propria cartella (*htdocs* per Apache) del web server.
 Dopo aver scompattato l'archivio, si deve aprire la console, entrare nella cartella in cui abbiamo il progetto e digitare:
 ```shell
 composer update
 ```
 Composer effettuerà il download delle dipendenze di cui ha bisogno il progetto.
-Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost](http://localhost).
+Per verificare che tutto funzioni come si deve, bisogna attivare il server e visitare la pagina [localhost/DBPizz-master](http://localhost/DBPizz-master).
+
+### Visualizzare grafica ###
+I passaggi precedenti portano a visualizzare il portale web senza la grafica (file CSS), dato che i riferimenti sono relativi alla root del web server.
+Per renderla visibile si può eseguire uno dei seguenti passi:
+
+* spostare il contenuto della cartella DBPizz-master nella cartella root del web server (*htdocs* nel caso di Apache).
+* cambiare la configurazione del Document Root del server e nel caso di Apache si deve:
+    - aprire il file *httpd.conf* presente nella cartella *conf*;
+    - cercare la stringa *DocumentRoot* e sostituire il percorso che le sta accanto (esso dovrebbe contenere la cartella *htdocs*) con *localhost/DBPizz-master*;
+    - cercare la stringa *Directory* e sostituire il percorso che le sta accanto (esso dovrebbe contenere la cartella *htdocs*) con *localhost/DBPizz-master*.
 
 
 Interfaccia Web
