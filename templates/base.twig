@@ -8,11 +8,18 @@
 		<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
 	</head>
 	<body>
-		<h1>DBPizz</h1>
-		{% include 'menu.twig' %}
-		<div id="content">
-			{% block content %}
-			{% endblock %}
+		<div id="wrapper">
+			<div id="header">
+				<h1 id="titoloSito">DBPizz</h1>
+				{% include 'menu.twig' %}
+			</div>
+			<div id="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div id="footer">
+				{% include 'footer.twig' %}
+			</div>
 		</div>
 	</body>
 </html>

@@ -4,20 +4,28 @@
 
 {% block content %}
 <form method="post" action="{{ app.urlFor("ProdottiAddPost") }}">
-	<label for="Nome_Pr">Nome</label>
-	<input type="text" name="nome" id="Nome_Pr"/></br>
-	
-	<label for="Prezzo_Pr">Prezzo</label>
-	<input type="text" name="prezzo" id="Prezzo_Pr"/></br>
-	
-	<label for="Ingredienti">Ingredienti</label>
-	<select multiple="multiple" id="Ingredienti" name="ingredienti[]">
-		{% for ingrediente in ingredienti  %}
-			<option value="{{ ingrediente.IDIngrediente }}"> {{ ingrediente.Nome_Ing }}</option>
-		{% endfor %}
-	</select><br/>
-
-	<input type="submit" value="Aggiungi Prodotto">
-	
+	<table>
+		<tr>
+			<td><label for="Nome_Pr">Nome</label></td>
+			<td><input type="text" name="nome" id="Nome_Pr"/></td>
+		</tr>
+		<tr>
+			<td><label for="Prezzo_Pr">Prezzo</label></td>
+			<td><input type="text" name="prezzo" id="Prezzo_Pr"/></td>
+		</tr>
+		<tr>
+			<td><label for="Ingredienti">Ingredienti</label></td>
+			<td>
+				<select multiple="multiple" id="Ingredienti" name="ingredienti[]">
+					{% for ingrediente in ingredienti  %}
+						<option value="{{ ingrediente.IDIngrediente }}"> {{ ingrediente.Nome_Ing }}</option>
+					{% endfor %}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Aggiungi Prodotto"></td>
+		</tr>
+	</table>
 </form>
 {% endblock %}

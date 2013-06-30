@@ -1,7 +1,38 @@
+/* Body */
+body {
+	background-image:url('/images/background.jpg');
+}
+
+#wrapper{
+	border: 1px solid black;
+}
+
+/* Titolo del sito */
+#titoloSito {
+	text-align: center;
+}
+
+/* Contenuto della pagina */
+#content {
+}
+
+/* Tabelle */
+#content table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+
+#footer{
+	border: 1px solid black;
+	margin: 10px;
+}
+
 /* Ricerca */
 div#ricerca {
 	border: 1px solid;
 	margin-bottom: 15px;
+	margin: 5px;
 }
 
 
@@ -36,6 +67,6 @@ ul#menu li a {
 }
   
 ul#menu li.active, ul#menu li:hover {
-    background-color: #000000;
+    background-color: #7F7F7F;
     border-bottom: 5px solid #FF831C;
 }

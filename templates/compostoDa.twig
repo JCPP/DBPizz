@@ -4,19 +4,32 @@
 
 {% block content %}
 	<a href="{{ app.urlFor("CompostodaAdd") }}">Aggiungi un composto da</a></br>
-	{% if compostoda %}
+	{% if prodotti %}
 		<table border="1px">
 			<thead>
 				<tr>
-					<th>ID Prodotto</th>
-					<th>ID Ingrediente</th>
+					<th>Nome</th>
+					<th>Ingredienti</th>
 				</tr>
 			</thead>
 			<tbody>
-				{% for compostodaSingle in compostoda %}
+				{% for prodotto in prodotti %}
 					<tr>
-						<td>{{ compostodaSingle.IDProdotto }}</td>
-						<td>{{ compostodaSingle.IDIngrediente }}</td>
+						<td>{{ prodotto.Nome_Pr }}</td>
+						{% set ingredienti = prodotto.ingredienti().find_many() %}
+						<td>
+						{% if ingredienti %}
+							{% for ingrediente in ingredienti %}
+								{{ ingrediente.Nome_Ing }}
+								{% if loop.last == false %}
+								,
+								{% endif %}
+							{% endfor %}
+							
+						{% else %}
+							 
+						{% endif %}
+						</td>
 					</tr>
 				{% endfor %}
 			</tbody>
