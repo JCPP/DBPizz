@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS Appartiene(
 INSERT OR IGNORE INTO 'Cliente' 
 	('IDCliente', 'Nome_Cl', 'Cognome_Cl')
 VALUES
-	(1, 'Matteo', 'Calo''');
+	(1, 'Matteo', 'Calò');
 
 INSERT OR IGNORE INTO 'Cliente' 
 	('IDCliente', 'Nome_Cl', 'Cognome_Cl')

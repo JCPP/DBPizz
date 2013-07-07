@@ -22,6 +22,10 @@ $app->post('/pizzerie/add/', function () use($app){
 	$postVars = $request->post();
 	$url = $request->getUrl() . $app->urlFor("APIPizzerieAdd");
 	
+	array_walk_recursive($postVars, function(&$value){
+		$value = utf8_encode($value);
+	});
+	
 	$response = \Httpful\Request::post($url)    // Build a POST request...
 	->sendsJson()                               // tell it we're sending (Content-Type) JSON...
 	->body(json_encode($postVars))             	// attach a body/payload...

@@ -3,6 +3,10 @@
 $app->post('/api/clienti/add', function () use($app){
 	$json = $app->request()->getBody();
 	$cliente = json_decode($json);
+	
+	array_walk_recursive($cliente, function(&$value){
+		$value = utf8_decode($value);
+	});
 
 	//Controlli
 	foreach($cliente as $key=>$value){

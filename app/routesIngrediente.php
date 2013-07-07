@@ -21,6 +21,10 @@ $app->post('/ingredienti/add/', function () use($app){
 	$request = $app->request();
 	$postVars = $request->post();
 	$url = $request->getUrl() . $app->urlFor("APIIngredientiAdd");
+	
+	array_walk_recursive($postVars, function(&$value){
+		$value = utf8_encode($value);
+	});
 
 	$response = \Httpful\Request::post($url)    // Build a POST request...
 	->sendsJson()                               // tell it we're sending (Content-Type) JSON...

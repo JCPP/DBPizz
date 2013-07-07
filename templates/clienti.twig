@@ -17,8 +17,8 @@
 				{% for cliente in clienti %}
 					<tr>
 						<td><a href="{{ app.urlFor('Cliente', {'id': cliente.IDCliente}) }}">{{ cliente.IDCliente }}</a></td>
-						<td>{{ cliente.Nome_Cl }}</td>
-						<td>{{ cliente.Cognome_Cl }}</td>
+						<td>{{ cliente.Nome_Cl|raw }}</td>
+						<td>{{ cliente.Cognome_Cl|raw }}</td>
 					</tr>
 				{% endfor %}
 			</tbody>

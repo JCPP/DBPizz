@@ -3,6 +3,10 @@
 $app->post('/api/pizzerie/add', function () use($app){
 	$json = $app->request()->getBody();
 	$pizzeria = json_decode($json);
+	
+	array_walk_recursive($pizzeria, function(&$value, $key){
+		$value = utf8_decode($value);
+	});
 
 	//Controlli
 	foreach($pizzeria as $key=>$value){

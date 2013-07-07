@@ -6,6 +6,12 @@
 $app->post('/api/prodotti/add', function () use($app){
 	$json = $app->request()->getBody();
 	$prodotto = json_decode($json);
+	
+	array_walk_recursive($prodotto, function(&$value, $key){
+		if($key != "ingredienti"){
+			$value = utf8_decode($value);
+		}
+	});
 
 	//Controlli
 	foreach($prodotto as $key=>$value){
