@@ -148,6 +148,3 @@ VALUES
 	(4,5,6),
 	(7,8,9);
 ```
-
-### Lettere accentate ###
-La descrizione del problema è riportata [qui](https://github.com/JCPP/DBPizz/issues/6).
