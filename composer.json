@@ -1,14 +1,16 @@
 {
 	"keywords" : [],
 	"require" : {
+		"nategood/httpful" : "*",
 		"twig/twig" : "1.*",
-		"slim/slim" : "2.*",
+		"slim/slim" : "2.2.*",
 		"j4mie/paris" : "1.*",
 		"slim/extras" : "2.0.3",
-		"j4mie/idiorm" : "1.*",
-		"nategood/httpful": "*"
+		"j4mie/idiorm" : "1.*"
 	},
-	"autoload": {
-        "classmap": ["app/lib/"]
-    }
+	"autoload" : {
+		"classmap" : [
+			"app/lib/"
+		]
+	}
 }
