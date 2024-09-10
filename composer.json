@@ -3,7 +3,7 @@
 	"require" : {
 		"nategood/httpful" : "*",
 		"twig/twig" : "1.*",
-		"slim/slim" : "2.2.*",
+		"slim/slim" : "2.6.*",
 		"j4mie/paris" : "1.*",
 		"slim/extras" : "2.0.3",
 		"j4mie/idiorm" : "1.*"
